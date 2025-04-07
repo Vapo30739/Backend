@@ -23,7 +23,7 @@ Before running the project locally, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ghassan1199/AboMariamVapeStoreBackEnd.git
+   git clone https://github.com/Vapo30739/Backend
    cd backend
    ```
 3. Install dependencies:
