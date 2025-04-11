@@ -9,7 +9,7 @@ const get = async () => {
 const update_dollar_price = async (dollar_price) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.dollar_price = dollar_price;
     settings.save();
     return settings;
@@ -18,7 +18,7 @@ const update_dollar_price = async (dollar_price) => {
 const update_about_us = async (about_us) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.about_us = about_us;
     settings.save();
     return settings;
@@ -28,7 +28,7 @@ const add_photo_to_hero = async (images) => {
     const settings = await SettingsModel.findOne();
 
     if (!settings)
-        settings = new SettingsModel.create();
+        settings = new SettingsModel()
 
     for (const image in images) {
         const { url } = await saveFileToCloudinary(images[image].buffer);
@@ -61,7 +61,7 @@ const remove_hero_photo = async (index) => {
 const update_facebook = async (facebook) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.social_media.facebook = facebook;
     settings.save();
     return settings;
@@ -70,7 +70,7 @@ const update_facebook = async (facebook) => {
 const update_youtube = async (youtube) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.social_media.youtube = youtube;
     settings.save();
     return settings;
@@ -79,7 +79,7 @@ const update_youtube = async (youtube) => {
 const update_whatsapp_channel = async (whatsapp_channel) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.social_media.whatsapp_channel = whatsapp_channel;
     settings.save();
     return settings;
@@ -87,7 +87,7 @@ const update_whatsapp_channel = async (whatsapp_channel) => {
 const update_instagram = async (instagram) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.social_media.instagram = instagram;
     settings.save();
     return settings;
@@ -96,7 +96,7 @@ const update_instagram = async (instagram) => {
 const update_telegram = async (telegram) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     settings.social_media.telegram = telegram;
     settings.save();
     return settings;
@@ -105,7 +105,7 @@ const update_telegram = async (telegram) => {
 const add_whatsapp_account = async (link, phone_number, name) => {
     settings = await SettingsModel.findOne();
     if (!settings)
-        settings = new SettingsModel.create()
+        settings = new SettingsModel()
     const whatsapp = {
         link, phone_number, name
     }
